@@ -9,7 +9,9 @@
         <div class="col-sm-6 offset-sm-3">
 
             {!! Form::open(['route' => 'signup.post']) !!}
+            @csrf
                 <div class="form-group">
+                @csrf
                     {!! Form::label('name', 'Name') !!}
                     {!! Form::text('name', null, ['class' => 'form-control']) !!}
                 </div>
