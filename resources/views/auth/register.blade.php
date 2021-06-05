@@ -9,10 +9,9 @@
         <div class="col-sm-6 offset-sm-3">
 
             {!! Form::open(['route' => 'signup.post']) !!}
-            @csrf
+            
                 <div class="form-group">
-                @csrf
-                    {!! Form::label('name', 'Name') !!}
+                    {!! Form::label('name', 'お名前') !!}
                     {!! Form::text('name', null, ['class' => 'form-control']) !!}
                 </div>
 
@@ -22,12 +21,12 @@
                 </div>
 
                 <div class="form-group">
-                    {!! Form::label('password', 'Password') !!}
+                    {!! Form::label('password', 'パスワード') !!}
                     {!! Form::password('password', ['class' => 'form-control']) !!}
                 </div>
 
                 <div class="form-group">
-                    {!! Form::label('password_confirmation', 'Confirmation') !!}
+                    {!! Form::label('password_confirmation', '確認のため、再度パスワードを入力ください') !!}
                     {!! Form::password('password_confirmation', ['class' => 'form-control']) !!}
                 </div>
 
