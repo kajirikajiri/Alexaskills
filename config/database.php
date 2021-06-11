@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Str;
 
+$db = parse_url(env('mysql://b1a71de5512694:7b6d4406@us-cdbr-east-04.cleardb.com/heroku_5337ee890c98c75?reconnect=true'));
+
 return [
 
     /*
@@ -46,11 +48,12 @@ return [
         'mysql' => [
             'driver' => 'mysql',
             'url' => env('DATABASE_URL'),
-            'host' => env('DB_HOST', '127.0.0.1'),
+            'host' => $db['host'],
             'port' => env('DB_PORT', '3306'),
-            'database' => env('DB_DATABASE', 'forge'),
-            'username' => env('DB_USERNAME', 'forge'),
-            'password' => env('DB_PASSWORD', ''),
+            'database' => ltrim($db
+            ["path"], '/'),
+            'username' => $db['user'],
+            'password' => $db['pass'],
             'unix_socket' => env('DB_SOCKET', ''),
             'charset' => 'utf8mb4',
             'collation' => 'utf8mb4_unicode_ci',
