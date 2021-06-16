@@ -51,7 +51,7 @@ return [
             'host' => $db['host'],
             'port' => env('DB_PORT', '3306'),
             'database' => ltrim($db
-            ["path"], '/'),
+            ['path'], '/'),
             'username' => $db['user'],
             'password' => $db['pass'],
             'unix_socket' => env('DB_SOCKET', ''),
